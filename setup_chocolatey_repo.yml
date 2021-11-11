@@ -1,0 +1,16 @@
+- name: set up repo and localize packages
+  hosts: wintarget4
+  gather_facts: no
+  vars:
+    chocolatey_packages:
+      - name: psexec
+        version: 2.34
+      - name: firefox
+        version: 94.0.1
+      - name: openssh
+        version: 8.6.0-beta1
+      - name: googlechrome
+        version: 95.0.4638.69
+        url: https://dl.google.com/tag/s/dl/chrome/install/googlechromestandaloneenterprise64.msi
+  roles:
+    - ansible-role-chocolatey_package_localize

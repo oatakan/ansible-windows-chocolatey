@@ -1,0 +1,66 @@
+---
+providers:
+  ovirt:
+    cluster: production
+
+nodes:
+  - name: wintarget1
+    role: windows_target
+    app_name: chocolatey_demo
+    networks:
+      - name: ovirtmgmt
+    disks:
+      - name: windows-2008-r2-standard
+        name_prefix: no
+        size: 50GiB
+    domain: home.ad
+    memory: 5120
+    cpu: 2
+    template: windows-2008-r2-standard
+    type: server
+    sysprep: yes
+  - name: wintarget2
+    role: windows_target
+    app_name: chocolatey_demo
+    networks:
+      - name: ovirtmgmt
+    disks:
+      - name: windows-2012-r2-standard
+        name_prefix: no
+        size: 50GiB
+    domain: home.ad
+    memory: 5120
+    cpu: 2
+    template: windows-2012-r2-standard
+    type: server
+    sysprep: yes
+  - name: wintarget3
+    role: windows_target
+    app_name: chocolatey_demo
+    networks:
+      - name: ovirtmgmt
+    disks:
+      - name: windows-2016-standard
+        name_prefix: no
+        size: 50GiB
+    domain: home.ad
+    memory: 4096
+    cpu: 2
+    template: windows-2016-standard
+    type: server
+    sysprep: yes
+  - name: wintarget4
+    role: windows_target
+    app_name: chocolatey_demo
+    networks:
+      - name: ovirtmgmt
+    disks:
+      - name: windows-2019-standard
+        name_prefix: no
+        size: 50GiB
+    domain: home.ad
+    memory: 4096
+    cpu: 2
+    template: windows-2019-standard
+    type: server
+    sysprep: yes
