@@ -3,6 +3,8 @@
   gather_facts: no
   vars:
     chocolatey_packages:
+      - name: chocolatey
+        version: 0.11.3
       - name: psexec
         version: 2.34
       - name: firefox
@@ -13,4 +15,4 @@
         version: 95.0.4638.69
         url: https://dl.google.com/tag/s/dl/chrome/install/googlechromestandaloneenterprise64.msi
   roles:
-    - ansible-role-chocolatey_package_localize
+    - oatakan.chocolatey_package_localize

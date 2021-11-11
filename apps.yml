@@ -12,12 +12,13 @@
       win_chocolatey:
         name: chocolatey
 
-    - name: Add new internal source
+    - name: configure internal repo
       win_chocolatey_source:
         name: internal repo
         state: present
         source: '\\{{ chocolatey_repo_server | default(hostvars["wintarget4"].ansible_host) }}\repo'
         priority: 1
+      when: state == 'present'
 
     - name: ensure apps are {{ state }}
       win_chocolatey:
