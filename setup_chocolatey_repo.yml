@@ -1,5 +1,5 @@
 - name: set up repo and localize packages
-  hosts: wintarget4
+  hosts: wintarget4*
   gather_facts: no
   vars:
     chocolatey_packages:

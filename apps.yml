@@ -16,7 +16,7 @@
       win_chocolatey_source:
         name: internal repo
         state: present
-        source: '\\{{ hostvars["wintarget4"].ansible_host }}\repo'
+        source: '\\{{ chocolatey_repo_server | default(hostvars["wintarget4"].ansible_host) }}\repo'
         priority: 1
 
     - name: ensure apps are {{ state }}
